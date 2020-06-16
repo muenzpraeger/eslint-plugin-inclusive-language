@@ -1,0 +1,7 @@
+*-debug.log
+*-error.log
+coverage
+node_modules
+.
+.vscode
+.DS_Store

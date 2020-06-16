@@ -1,0 +1,24 @@
+{
+    "words": [
+        {
+            "word": "blacklist",
+            "suggestion": "blocklist",
+            "explanation": "To convey the same idea, consider '{{suggestion}}' instead of '{{word}}'."
+        },
+        {
+            "word": "whitelist",
+            "suggestion": "allowlist",
+            "explanation": "To convey the same idea, consider '{{suggestion}}' instead of '{{word}}'."
+        },
+        {
+            "word": "master",
+            "suggestion": "primary",
+            "explanation": "Instead of '{{word}}', you can use '{{suggestion}}'."
+        },
+        {
+            "word": "slave",
+            "suggestion": "secondary",
+            "explanation": "Instead of '{{word}}', you really should consider an alternative like '{{suggestion}}'."
+        }
+    ]
+}

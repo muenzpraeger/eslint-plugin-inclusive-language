@@ -1,0 +1,44 @@
+{
+    "name": "eslint-plugin-inclusive-language",
+    "version": "1.0.0",
+    "description": "An ESLint plugin to raise awareness for using inclusive language not only in your codebase, but in life.",
+    "main": "lib/index.js",
+    "repository": "muenzpraeger/eslint-plugin-inclusive-language",
+    "author": "René Winkelmeyer @muenzpraeger",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "eslint": "^7.2.0",
+        "husky": "^4.2.5",
+        "jest": "^26.0.1",
+        "lint-staged": "^10.2.10",
+        "prettier": "^2.0.5"
+    },
+    "files": [
+        "lib/"
+    ],
+    "scripts": {
+        "lint": "eslint **/lib/**/*.js",
+        "prettier": "prettier --write '**/*.{js,json,md,yml}'",
+        "prettier:verify": "prettier --list-different '**/*.{js,json,md,yml}'",
+        "test:unit": "jest",
+        "test:unit:coverage": "jest --coverage",
+        "test:unit:watch": "jest --watch"
+    },
+    "bugs": {
+        "url": "https://github.com/muenzpraeger/eslint-plugin-inclusive-language"
+    },
+    "homepage": "https://github.com/muenzpraeger/eslint-plugin-inclusive-language#readme",
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "**/*.{js,json,md,yml}": [
+            "prettier --write"
+        ],
+        "**/lib/**/*.js": [
+            "eslint"
+        ]
+    }
+}
