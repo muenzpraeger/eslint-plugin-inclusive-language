@@ -6,5 +6,5 @@
             "explanation": "Instead of '{{word}}', you can use '{{suggestion}}'."
         }
     ],
-    "exclusionList": ["masterboo", "foomaster", "bazmasterbar"]
+    "allowedTerms": ["masterfoo", "foomaster", "bazmasterbar"]
 }

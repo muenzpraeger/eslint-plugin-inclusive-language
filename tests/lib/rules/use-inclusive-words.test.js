@@ -24,7 +24,7 @@ ruleTester.run('use-inclusive-words', rule, {
             options: [customConfig]
         },
         {
-            code: 'var ccType = "MasterBoo"',
+            code: 'var ccType = "MasterFoo"',
             options: [customConfig]
         },
         {
