@@ -20,5 +20,6 @@
             "suggestion": "secondary",
             "explanation": "Instead of '{{word}}', you really should consider an alternative like '{{suggestion}}'."
         }
-    ]
+    ],
+    "exclusionList": []
 }

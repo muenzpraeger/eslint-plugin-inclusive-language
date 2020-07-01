@@ -12,7 +12,7 @@ const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester();
 
-console.debug(customConfig);
+console.log(customConfig);
 
 ruleTester.run('use-inclusive-words', rule, {
     valid: [
@@ -21,6 +21,18 @@ ruleTester.run('use-inclusive-words', rule, {
         },
         {
             code: 'var message = "This is a group of people."',
+            options: [customConfig]
+        },
+        {
+            code: 'var ccType = "MasterBoo"',
+            options: [customConfig]
+        },
+        {
+            code: 'var fooMaster = 1',
+            options: [customConfig]
+        },
+        {
+            code: 'var BazMasterBar = function () {}',
             options: [customConfig]
         }
     ],
