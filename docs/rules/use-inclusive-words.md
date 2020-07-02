@@ -47,6 +47,25 @@ This is an example for a custom words file. The `explanation` key is optional. I
 }
 ```
 
+You may also specify a list of explicitly allowed terms using the `allowedTerms` key. The list of terms should be the full word of the allowed term (not a part of a word) and should be all lowercase.
+
+```json
+{
+    "allowedTerms": ["mastercard"]
+}
+```
+
+This will allow all of the following to pass without warning or error:
+
+-   `mastercard`
+-   `MasterCard`
+-   `masterCard`
+-   `"The card type is MasterCard"`
+
+But it will fail on the following due to it not being the full word.
+
+-   `masterCardVerification`
+
 ## When not to use it
 
 If you don't want to check for inclusive language in your codebase.
