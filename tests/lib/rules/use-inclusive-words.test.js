@@ -84,6 +84,15 @@ ruleTester.run('use-inclusive-words', rule, {
                     message: "Instead of 'guys', you can use 'people'."
                 }
             ]
+        },
+        {
+            code: 'var fooMasters = 1',
+            options: [customConfig],
+            errors: [
+                {
+                    message: "Instead of 'master', you can use 'primary'."
+                }
+            ]
         }
     ]
 });
