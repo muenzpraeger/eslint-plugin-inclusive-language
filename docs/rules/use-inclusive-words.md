@@ -6,7 +6,7 @@ This rule aims to raise awareness of non-inclusive words.
 
 ### Options
 
-This rule has an optional string parameter. The value of this parameter should be a path to a custom JSON file, relative to your projects root directory, where you can provide custom words that you want to check.
+This rule has an optional parameter. The value of this parameter can be either a configuration object, or a path to a custom JSON file, relative to your projects root directory, where you can provide custom words that you want to check.
 
 Example of using the [default words](http://github.com/muenzpraeger/eslint-plugin-inclusive-language/tree/primary/lib/config/inclusive-words.json):
 
@@ -33,7 +33,29 @@ Example of using a custom words file:
 }
 ```
 
-This is an example for a custom words file. The `explanation` key is optional. If not present the default message will be used. If you want to include at runtime the `word` or `suggestion` in your explanation, put them between double curly braces.
+Example of using an inline configuration:
+
+```json
+{
+    "plugins": ["inclusive-language"],
+    "rules": {
+        "inclusive-language/use-inclusive-words": [
+            "error",
+            {
+                "words": [
+                    {
+                        "word": "guys",
+                        "suggestion": "people",
+                        "explanation": "The usage of the non-inclusive word '{{word}}' is discouraged, use '{{suggestion}}' instead."
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+This is an example for a custom configuration. The `explanation` key is optional. If not present the default message will be used. If you want to include at runtime the `word` or `suggestion` in your explanation, put them between double curly braces.
 
 ```json
 {
@@ -47,11 +69,11 @@ This is an example for a custom words file. The `explanation` key is optional. I
 }
 ```
 
-You may also specify a list of explicitly allowed terms using the `allowedTerms` key. The list of terms should be the full word of the allowed term (not a part of a word) and should be all lowercase.
+You may also specify a list of explicitly allowed term objects in the configuration using the `allowedTerms` key. The `term` key should be the full word of the allowed term (not a part of a word) and should be all lowercase. Using the `allowPartialMatches` key you define if you want to allow partial matches of the term.
 
 ```json
 {
-    "allowedTerms": ["mastercard"]
+    "allowedTerms": [{ "term": "mastercard", "allowPartialMatches": true }]
 }
 ```
 
@@ -60,9 +82,10 @@ This will allow all of the following to pass without warning or error:
 -   `mastercard`
 -   `MasterCard`
 -   `masterCard`
+-   `masterCardVerification`
 -   `"The card type is MasterCard"`
 
-But it will fail on the following due to it not being the full word.
+With setting `allowPartialMatches` to `false` it will fail on the following due to it not being the full word.
 
 -   `masterCardVerification`
 
