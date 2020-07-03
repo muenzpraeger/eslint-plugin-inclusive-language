@@ -34,6 +34,16 @@ ruleTester.run('use-inclusive-words', rule, {
         {
             code: 'var BazMasterBar = function () {}',
             options: [customConfig]
+        },
+        {
+            code:
+                '/* This is an example of non-partial matching not-partial-guys */',
+            options: [customConfig]
+        },
+        {
+            code:
+                '/* This is an example of partial matching (extra-definitiely-partial-guys) */',
+            options: [customConfig]
         }
     ],
     invalid: [
@@ -91,6 +101,15 @@ ruleTester.run('use-inclusive-words', rule, {
             errors: [
                 {
                     message: "Instead of 'master', you can use 'primary'."
+                }
+            ]
+        },
+        {
+            code: 'var message = "made-it-partial-not-partial-guys"',
+            options: [customConfig],
+            errors: [
+                {
+                    message: "Instead of 'guys', you can use 'people'."
                 }
             ]
         }
