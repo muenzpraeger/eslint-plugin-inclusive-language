@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.0](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/compare/1.1.0...1.2.0) - 2020-07-03
 
--   Allow partial matches of allowed terms [saramarcondes](https://github.com/saramarcondes) [`PR 3`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/8)
--   Allow inline configuration of rules [saramarcondes](https://github.com/saramarcondes) [`PR 3`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/9)
+-   Allow partial matches of allowed terms [saramarcondes](https://github.com/saramarcondes) [`PR 8`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/8)
+-   Allow inline configuration of rules [muenzpraeger](https://github.com/muenzpraeger) [`PR 9`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/9)
 
 ## [1.1.0](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/compare/1.0.0...1.1.0) - 2020-07-02
 
