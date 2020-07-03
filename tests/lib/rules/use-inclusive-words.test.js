@@ -1,18 +1,28 @@
 'use strict';
 
-const path = require('path');
-
 const rule = require('../../../lib/rules/use-inclusive-words');
-const customConfig = path.resolve(
-    process.cwd(),
-    './tests/lib/config/inclusive-words.json'
-);
+
+const customConfig = {
+    words: [
+        {
+            word: 'guys',
+            suggestion: 'people',
+            explanation: "Instead of '{{word}}', you can use '{{suggestion}}'."
+        }
+    ],
+    allowedTerms: [
+        'masterfoo',
+        'foomaster',
+        'bazmasterbar',
+        { term: 'definitiely-partial-guys', allowPartialMatches: true },
+        { term: 'not-partial-guys', allowPartialMatches: false },
+        { term: 'notslugpartialguys', allowPartialMatches: true }
+    ]
+};
 
 const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester();
-
-console.log(customConfig);
 
 ruleTester.run('use-inclusive-words', rule, {
     valid: [
