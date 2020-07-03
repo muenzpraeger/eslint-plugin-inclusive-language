@@ -11,6 +11,7 @@
         "foomaster",
         "bazmasterbar",
         { "term": "definitiely-partial-guys", "allowPartialMatches": true },
-        { "term": "not-partial-guys", "allowPartialMatches": false }
+        { "term": "not-partial-guys", "allowPartialMatches": false },
+        { "term": "notslugpartialguys", "allowPartialMatches": true }
     ]
 }
