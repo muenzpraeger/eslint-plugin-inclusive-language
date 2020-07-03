@@ -6,5 +6,12 @@
             "explanation": "Instead of '{{word}}', you can use '{{suggestion}}'."
         }
     ],
-    "allowedTerms": ["masterfoo", "foomaster", "bazmasterbar"]
+    "allowedTerms": [
+        "masterfoo",
+        "foomaster",
+        "bazmasterbar",
+        { "term": "definitiely-partial-guys", "allowPartialMatches": true },
+        { "term": "not-partial-guys", "allowPartialMatches": false },
+        { "term": "notslugpartialguys", "allowPartialMatches": true }
+    ]
 }
