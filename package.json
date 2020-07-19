@@ -7,7 +7,7 @@
     "author": "René Winkelmeyer @muenzpraeger",
     "license": "CC0-1.0",
     "devDependencies": {
-        "eslint": "^7.2.0",
+        "eslint": "^7.5.0",
         "husky": "^4.2.5",
         "jest": "^26.0.1",
         "lint-staged": "^10.2.10",
