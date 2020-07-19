@@ -14,6 +14,7 @@ const customConfig = {
         'masterfoo',
         'foomaster',
         'bazmasterbar',
+        { term: 'blob/master', allowPartialMatches: true },
         { term: 'definitiely-partial-guys', allowPartialMatches: true },
         { term: 'not-partial-guys', allowPartialMatches: false },
         { term: 'notslugpartialguys', allowPartialMatches: true }
@@ -53,6 +54,11 @@ ruleTester.run('use-inclusive-words', rule, {
         {
             code:
                 '/* This is an example of partial matching (extra-definitiely-partial-guys) */',
+            options: [customConfig]
+        },
+        {
+            code:
+                '// A comment with a a url https://myvcs.com/someAccount/blob/master/README.md',
             options: [customConfig]
         },
         {
