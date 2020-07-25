@@ -45,8 +45,8 @@ Example of using an inline configuration:
                 "words": [
                     {
                         "word": "guys",
-                        "suggestion": "people",
-                        "explanation": "The usage of the non-inclusive word '{{word}}' is discouraged, use '{{suggestion}}' instead."
+                        "suggestions": ["people"],
+                        "explanation": "The usage of the non-inclusive word '{{word}}' is discouraged, use '{{suggestions}}' instead."
                     }
                 ]
             }
@@ -55,15 +55,15 @@ Example of using an inline configuration:
 }
 ```
 
-This is an example for a custom configuration. The `explanation` key is optional. If not present the default message will be used. If you want to include at runtime the `word` or `suggestion` in your explanation, put them between double curly braces.
+This is an example for a custom configuration. The `explanation` key is optional. If not present the default message will be used. If you want to include at runtime the `word` or `suggestions` in your explanation, put them between double curly braces.
 
 ```json
 {
     "words": [
         {
             "word": "guys",
-            "suggestion": "people",
-            "explanation": "The usage of the non-inclusive word '{{word}}' is discouraged, use '{{suggestion}}' instead."
+            "suggestions": ["people"],
+            "explanation": "The usage of the non-inclusive word '{{word}}' is discouraged, use '{{suggestions}}' instead."
         }
     ]
 }

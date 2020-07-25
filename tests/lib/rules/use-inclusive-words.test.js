@@ -6,8 +6,8 @@ const customConfig = {
     words: [
         {
             word: 'guys',
-            suggestion: 'people',
-            explanation: "Instead of '{{word}}', you can use '{{suggestion}}'."
+            suggestions: ['people'],
+            explanation: "Instead of '{{word}}', you can use '{{suggestions}}'."
         }
     ],
     allowedTerms: [
