@@ -23,7 +23,13 @@ const customConfig = {
 
 const RuleTester = require('eslint').RuleTester;
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        }
+    }
+});
 
 ruleTester.run('use-inclusive-words', rule, {
     valid: [
@@ -157,6 +163,29 @@ ruleTester.run('use-inclusive-words', rule, {
                 }
             ],
             output: 'var classname = "primary-bar"'
+        },
+        {
+            code: '<MasterClass />',
+            errors: [
+                {
+                    message: "Instead of 'master', you can use 'primary'."
+                }
+            ],
+            output: '<PrimaryClass />'
+        },
+        {
+            code: '<Foo blacklist={blacklist} />',
+            errors: [
+                {
+                    message:
+                        "To convey the same idea, consider 'blocklist' instead of 'blacklist'."
+                },
+                {
+                    message:
+                        "To convey the same idea, consider 'blocklist' instead of 'blacklist'."
+                }
+            ],
+            output: '<Foo blocklist={blocklist} />'
         }
     ]
 });
