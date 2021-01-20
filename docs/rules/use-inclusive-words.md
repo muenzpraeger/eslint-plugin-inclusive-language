@@ -45,7 +45,7 @@ Example of using an inline configuration:
                 "words": [
                     {
                         "word": "guys",
-                        "suggestion": "people",
+                        "suggestions": ["people"],
                         "explanation": "The usage of the non-inclusive word '{{word}}' is discouraged, use '{{suggestion}}' instead."
                     }
                 ]
@@ -62,7 +62,7 @@ This is an example for a custom configuration. The `explanation` key is optional
     "words": [
         {
             "word": "guys",
-            "suggestion": "people",
+            "suggestions": ["people"],
             "explanation": "The usage of the non-inclusive word '{{word}}' is discouraged, use '{{suggestion}}' instead."
         }
     ]
