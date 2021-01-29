@@ -23,7 +23,13 @@ const customConfig = {
 
 const RuleTester = require('eslint').RuleTester;
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        }
+    }
+});
 
 ruleTester.run('use-inclusive-words', rule, {
     valid: [
@@ -74,7 +80,8 @@ ruleTester.run('use-inclusive-words', rule, {
                     message:
                         "To convey the same idea, consider 'blocklist' instead of 'blacklist'."
                 }
-            ]
+            ],
+            output: 'var isBlocklisted = true'
         },
         {
             code: 'function rulesUpdate(whitelist) {}',
@@ -83,7 +90,8 @@ ruleTester.run('use-inclusive-words', rule, {
                     message:
                         "To convey the same idea, consider 'allowlist' instead of 'whitelist'."
                 }
-            ]
+            ],
+            output: 'function rulesUpdate(allowlist) {}'
         },
         {
             code: '// This updates the master branch of the repository.',
@@ -91,7 +99,8 @@ ruleTester.run('use-inclusive-words', rule, {
                 {
                     message: "Instead of 'master', you can use 'primary'."
                 }
-            ]
+            ],
+            output: '// This updates the primary branch of the repository.'
         },
         {
             code:
@@ -104,7 +113,9 @@ ruleTester.run('use-inclusive-words', rule, {
                     message:
                         "Instead of 'slave', you really should consider an alternative like 'secondary'."
                 }
-            ]
+            ],
+            output:
+                'var sendUpdate = isPrimaryConnected ? true : isSecondaryConnected'
         },
         {
             code: 'var message = "This is a group of guys."',
@@ -113,7 +124,8 @@ ruleTester.run('use-inclusive-words', rule, {
                 {
                     message: "Instead of 'guys', you can use 'people'."
                 }
-            ]
+            ],
+            output: 'var message = "This is a group of people."'
         },
         {
             code: 'var fooMasters = 1',
@@ -122,7 +134,8 @@ ruleTester.run('use-inclusive-words', rule, {
                 {
                     message: "Instead of 'master', you can use 'primary'."
                 }
-            ]
+            ],
+            output: 'var fooPrimarys = 1'
         },
         {
             code: 'var message = "made-it-partial-not-partial-guys"',
@@ -131,15 +144,48 @@ ruleTester.run('use-inclusive-words', rule, {
                 {
                     message: "Instead of 'guys', you can use 'people'."
                 }
-            ]
+            ],
+            output: 'var message = "made-it-partial-not-partial-people"'
         },
         {
             code: 'var classname = "master-bar"',
             errors: [
                 {
+                    message: "Instead of 'master', you can use 'primary'.",
+                    suggestions: [
+                        {
+                            desc: "Replace word 'master' with 'primary.'"
+                        },
+                        {
+                            desc: "Replace word 'master' with 'main.'"
+                        }
+                    ]
+                }
+            ],
+            output: 'var classname = "primary-bar"'
+        },
+        {
+            code: '<MasterClass />',
+            errors: [
+                {
                     message: "Instead of 'master', you can use 'primary'."
                 }
-            ]
+            ],
+            output: '<PrimaryClass />'
+        },
+        {
+            code: '<Foo blacklist={blacklist} />',
+            errors: [
+                {
+                    message:
+                        "To convey the same idea, consider 'blocklist' instead of 'blacklist'."
+                },
+                {
+                    message:
+                        "To convey the same idea, consider 'blocklist' instead of 'blacklist'."
+                }
+            ],
+            output: '<Foo blocklist={blocklist} />'
         }
     ]
 });
