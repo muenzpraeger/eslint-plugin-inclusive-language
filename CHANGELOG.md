@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/compare/1.2.1...2.0.0) - 2021-01-29
 
--   Add URI support for partial matches of allowed terms [muenzpraeger](https://github.com/muenzpraeger) [`PR 14`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/14)
+-   Give custom rule configuration precendence over built-in rules [muenzpraeger](https://github.com/muenzpraeger) [`PR 23`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/23)
 
 -   Add JSX support [stevenweber](https://github.com/stevenweber) [`PR 21`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/21)
 
