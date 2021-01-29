@@ -4,6 +4,8 @@ An ESLint plugin to raise awareness for using inclusive language not only in you
 
 [![Github Workflow](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/workflows/build%20primary/badge.svg?branch=primary)](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/actions) [![Version](https://img.shields.io/npm/v/eslint-plugin-inclusive-language.svg)](https://npmjs.org/package/eslint-plugin-inclusive-language)
 
+> If you're upgrading from 1.x.x. to 2.x.x, please read the [migration document here first](/docs/migration_200.md).
+
 ## What is inclusive language anyway?
 
 This is a great question to ask.
