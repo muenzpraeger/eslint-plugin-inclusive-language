@@ -18,7 +18,8 @@ const customConfigDefault = {
         { term: 'definitiely-partial-guys', allowPartialMatches: true },
         { term: 'not-partial-guys', allowPartialMatches: false },
         { term: 'notslugpartialguys', allowPartialMatches: true }
-    ]
+    ],
+    lintStrings: true
 };
 
 const RuleTester = require('eslint').RuleTester;
@@ -70,17 +71,6 @@ ruleTester.run('use-inclusive-words', rule, {
         {
             code: 'var something_notslugpartialguys = 323',
             options: [customConfigDefault]
-        },
-        {
-            code: 'var message = "This is a group of guys."',
-            options: [customConfigDefault]
-        },
-        {
-            code: 'var message = "made-it-partial-not-partial-guys"',
-            options: [customConfigDefault]
-        },
-        {
-            code: 'var classname = "master-bar"'
         }
     ],
     invalid: [
@@ -129,6 +119,16 @@ ruleTester.run('use-inclusive-words', rule, {
                 'var sendUpdate = isMasterConnected ? true : isSlaveConnected'
         },
         {
+            code: 'var message = "This is a group of guys."',
+            options: [customConfigDefault],
+            errors: [
+                {
+                    message: "Instead of 'guys', you can use 'people'."
+                }
+            ],
+            output: 'var message = "This is a group of guys."'
+        },
+        {
             code: 'var fooMasters = 1',
             options: [customConfigDefault],
             errors: [
@@ -137,6 +137,33 @@ ruleTester.run('use-inclusive-words', rule, {
                 }
             ],
             output: 'var fooMasters = 1'
+        },
+        {
+            code: 'var message = "made-it-partial-not-partial-guys"',
+            options: [customConfigDefault],
+            errors: [
+                {
+                    message: "Instead of 'guys', you can use 'people'."
+                }
+            ],
+            output: 'var message = "made-it-partial-not-partial-guys"'
+        },
+        {
+            code: 'var classname = "master-bar"',
+            errors: [
+                {
+                    message: "Instead of 'master', you can use 'primary'.",
+                    suggestions: [
+                        {
+                            desc: "Replace word 'master' with 'primary.'"
+                        },
+                        {
+                            desc: "Replace word 'master' with 'main.'"
+                        }
+                    ]
+                }
+            ],
+            output: 'var classname = "master-bar"'
         },
         {
             code: '<MasterClass />',
