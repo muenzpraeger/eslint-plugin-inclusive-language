@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-inclusive-language",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "An ESLint plugin to raise awareness for using inclusive language not only in your codebase, but in life.",
     "main": "lib/index.js",
     "repository": "muenzpraeger/eslint-plugin-inclusive-language",
