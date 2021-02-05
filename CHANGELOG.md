@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.1](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/compare/2.1.0...2.1.1) - 2021-02-05
+
+-   Performance optimizations [muenzpraeger](https://github.com/muenzpraeger) [`PR 32`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/32)
+
+-   Performance optimizations [sharmilajesupaul](https://github.com/sharmilajesupaul) [`PR 31`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/31)
+
 ## [2.1.0](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/compare/2.0.0...2.1.0) - 2021-02-03
 
 -   Change autofix to opt-in [muenzpraeger](https://github.com/muenzpraeger) [`PR 27`](https://github.com/muenzpraeger/eslint-plugin-inclusive-language/pull/27)
