@@ -150,6 +150,7 @@ ruleTester.run('use-inclusive-words', rule, {
         },
         {
             code: 'var classname = "master-bar"',
+            options: [customConfigDefault],
             errors: [
                 {
                     message: "Instead of 'master', you can use 'primary'.",
