@@ -2,24 +2,29 @@
     "allowedTerms": [],
     "words": [
         {
-            "explanation": "To convey the same idea, consider '{{suggestion}}' instead of '{{word}}'.",
+            "word": "blacklist",
             "suggestions": ["blocklist", "denylist"],
-            "word": "blacklist"
+            "explanation": "To convey the same idea, consider '{{suggestion}}' instead of '{{word}}'."
         },
         {
-            "explanation": "To convey the same idea, consider '{{suggestion}}' instead of '{{word}}'.",
+            "word": "whitelist",
             "suggestions": ["allowlist", "passlist"],
-            "word": "whitelist"
+            "explanation": "To convey the same idea, consider '{{suggestion}}' instead of '{{word}}'."
         },
         {
-            "explanation": "Instead of '{{word}}', you can use '{{suggestion}}'.",
+            "word": "guys",
+            "suggestions": ["folks", "people"],
+            "explanation": "Instead of '{{word}}', you may use '{{suggestion}}'."
+        },
+        {
+            "word": "master",
             "suggestions": ["primary", "main"],
-            "word": "master"
+            "explanation": "Instead of '{{word}}', you can use '{{suggestion}}'."
         },
         {
-            "explanation": "Instead of '{{word}}', you really should consider an alternative like '{{suggestion}}'.",
+            "word": "slave",
             "suggestions": ["secondary", "replica"],
-            "word": "slave"
+            "explanation": "Instead of '{{word}}', you really should consider an alternative like '{{suggestion}}'."
         }
     ]
 }
