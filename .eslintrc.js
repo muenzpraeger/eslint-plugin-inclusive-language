@@ -1,5 +1,5 @@
 module.exports = {
-    extends: ['eslint:recommended'],
+    extends: ['eslint:recommended', 'plugin:json/recommended'],
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module'
