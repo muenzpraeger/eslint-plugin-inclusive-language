@@ -33,7 +33,7 @@ jobs:
 
             # Prettier formatting
             - name: 'Code formatting verification with Prettier'
-              run: yarn prettier:verify
+              run: yarn format:verify
 
             # ESlint
             - name: 'ESlint verification'
