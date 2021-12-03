@@ -55,18 +55,15 @@ ruleTester.run('use-inclusive-words', rule, {
             options: [customConfigAutofix]
         },
         {
-            code:
-                '/* This is an example of non-partial matching (not-partial-guys) */',
+            code: '/* This is an example of non-partial matching (not-partial-guys) */',
             options: [customConfigAutofix]
         },
         {
-            code:
-                '/* This is an example of partial matching (extra-definitiely-partial-guys) */',
+            code: '/* This is an example of partial matching (extra-definitiely-partial-guys) */',
             options: [customConfigAutofix]
         },
         {
-            code:
-                '// A comment with a a url https://myvcs.com/someAccount/blob/master/README.md',
+            code: '// A comment with a a url https://myvcs.com/someAccount/blob/master/README.md',
             options: [customConfigAutofix]
         },
         {
@@ -108,8 +105,7 @@ ruleTester.run('use-inclusive-words', rule, {
             output: '// This updates the primary branch of the repository.'
         },
         {
-            code:
-                'var sendUpdate = isMasterConnected ? true : isSlaveConnected',
+            code: 'var sendUpdate = isMasterConnected ? true : isSlaveConnected',
             options: [customConfigAutofix],
             errors: [
                 {
@@ -120,8 +116,7 @@ ruleTester.run('use-inclusive-words', rule, {
                         "Instead of 'slave', you really should consider an alternative like 'secondary'."
                 }
             ],
-            output:
-                'var sendUpdate = isPrimaryConnected ? true : isSecondaryConnected'
+            output: 'var sendUpdate = isPrimaryConnected ? true : isSecondaryConnected'
         },
         {
             code: 'var message = "This is a group of guys."',

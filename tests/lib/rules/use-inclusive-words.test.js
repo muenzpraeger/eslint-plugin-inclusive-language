@@ -53,18 +53,15 @@ ruleTester.run('use-inclusive-words', rule, {
             options: [customConfigDefault]
         },
         {
-            code:
-                '/* This is an example of non-partial matching (not-partial-guys) */',
+            code: '/* This is an example of non-partial matching (not-partial-guys) */',
             options: [customConfigDefault]
         },
         {
-            code:
-                '/* This is an example of partial matching (extra-definitiely-partial-guys) */',
+            code: '/* This is an example of partial matching (extra-definitiely-partial-guys) */',
             options: [customConfigDefault]
         },
         {
-            code:
-                '// A comment with a a url https://myvcs.com/someAccount/blob/master/README.md',
+            code: '// A comment with a a url https://myvcs.com/someAccount/blob/master/README.md',
             options: [customConfigDefault]
         },
         {
@@ -114,8 +111,7 @@ ruleTester.run('use-inclusive-words', rule, {
             output: '// This updates the master branch of the repository.'
         },
         {
-            code:
-                'var sendUpdate = isMasterConnected ? true : isSlaveConnected',
+            code: 'var sendUpdate = isMasterConnected ? true : isSlaveConnected',
             errors: [
                 {
                     message: "Instead of 'master', you can use 'primary'."
@@ -125,8 +121,7 @@ ruleTester.run('use-inclusive-words', rule, {
                         "Instead of 'slave', you really should consider an alternative like 'secondary'."
                 }
             ],
-            output:
-                'var sendUpdate = isMasterConnected ? true : isSlaveConnected'
+            output: 'var sendUpdate = isMasterConnected ? true : isSlaveConnected'
         },
         {
             code: 'var fooMasters = 1',
